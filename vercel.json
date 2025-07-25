@@ -1,0 +1,46 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://rrr/$1",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.rrr"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://rrr/$1",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "rrr.vercel.app"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
+  ]
+}
